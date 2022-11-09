@@ -144,6 +144,7 @@ namespace firstClass
                 string password = Console.ReadLine();
                 File.WriteAllText(username + ".txt", password);
                 Console.WriteLine("You have successfully completed you registration, Thank you");
+                Console.ReadLine();
             }
             else if (str == "log")
             {
@@ -169,15 +170,18 @@ namespace firstClass
                     if (savedPassword == pass)
                     {
                         Console.WriteLine("Congrats login successful");
+                        Console.ReadLine();
                     }
                     else
                     {
                         Console.WriteLine("Incorrect Password");
+                        Console.ReadLine();
                     }
                 }
                 else
                 {
                     Console.WriteLine("Incorrect Username");
+                    Console.ReadLine();
                 }
             }
         }
