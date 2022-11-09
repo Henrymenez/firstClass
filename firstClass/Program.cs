@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.IO;
@@ -33,10 +33,12 @@ namespace firstClass
                 }
                 string output = newHash + s;
                 Console.WriteLine(output);
+                Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("String should be more than four characters!!!");
+                Console.ReadLine();
             }
            
         }
@@ -60,6 +62,7 @@ namespace firstClass
             Console.Write("The Indexes are: ");
 
             Console.WriteLine(String.Join("; ", list));
+            Console.ReadLine();
         }
 
         public void difBtwBreakCont()
@@ -81,7 +84,9 @@ namespace firstClass
                     break;
                 }
                 Console.WriteLine(x);
+               
             }
+            Console.ReadLine();
         }
 
         public void libManagement()
@@ -94,22 +99,27 @@ namespace firstClass
             if (str == "e")
             {
                 Console.WriteLine("EFCore Books");
+                Console.ReadLine();
             }
             else if (str == "c")
             {
                 Console.WriteLine("C# Books");
+                Console.ReadLine();
             }
             else if (str == "d")
             {
                 Console.WriteLine("Clean Coding Books");
+                Console.ReadLine();
             }
             else if (str == "o")
             {
                 Console.WriteLine(".NET Core Books");
+                Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("Select from the valid options e,c,d & o");
+                Console.ReadLine();
             }
         }
 
@@ -123,6 +133,7 @@ namespace firstClass
                 string data = Console.ReadLine();
                 DateTime inSevenDays = DateTime.Parse(data).AddDays(7);
                 Console.WriteLine(inSevenDays);
+                Console.ReadLine();
             }catch(Exception e)
             {
                 Console.WriteLine(e.Message);
@@ -142,7 +153,7 @@ namespace firstClass
                 string username = Console.ReadLine();
                 Console.WriteLine("Password: ");
                 string password = Console.ReadLine();
-                File.WriteAllText(username + ".txt", password);
+                File.WriteAllText(username.ToLower()+".txt", password);
                 Console.WriteLine("You have successfully completed you registration, Thank you");
                 Console.ReadLine();
             }
@@ -163,7 +174,7 @@ namespace firstClass
                     }
 
                 }
-                if (savedPassword != "")
+                if (savedPassword != "")  
                 {
                     Console.WriteLine("Enter Password: ");
                     string pass = Console.ReadLine();
@@ -175,13 +186,13 @@ namespace firstClass
                     else
                     {
                         Console.WriteLine("Incorrect Password");
-                        Console.ReadLine();
+                         Console.ReadLine();
                     }
                 }
                 else
                 {
                     Console.WriteLine("Incorrect Username");
-                    Console.ReadLine();
+                     Console.ReadLine();
                 }
             }
         }
@@ -191,12 +202,35 @@ namespace firstClass
         {
             Program p = new Program();
 
-                // p.strConvert(); //first task
-                //p.capstrIndex();// second task
-                //  p.dateToSevenDays(); third task
-                // p.difBtwBreakCont(); fourth task
-              //  p.basicAuth(); //fifth task
-            // p.libManagement(); sixth task
+            Console.WriteLine("What task would u like to run 1,2,3,4, 5 or 6 ??");
+            string optionUser = Console.ReadLine();
+            if(optionUser == "1")
+            {
+                p.strConvert(); //first task
+            }else if(optionUser == "2")
+            {
+                p.capstrIndex();// second task
+            }else if(optionUser == "3")
+            {
+                p.dateToSevenDays(); //third task
+            }else if(optionUser == "4")
+            {
+                p.difBtwBreakCont(); //fourth task
+            }else if (optionUser == "5")
+            {
+                    p.basicAuth(); //fifth task
+            }else if(optionUser == "6")
+            {
+                p.libManagement(); //sixth task
+            }
+            else
+            {
+                Console.WriteLine("Wrong Option so First task is being ran: ");
+                 p.strConvert();
+            }
+              
+               
+              
 
             }
             
